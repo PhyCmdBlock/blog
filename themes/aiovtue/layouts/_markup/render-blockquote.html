@@ -1,0 +1,39 @@
+{{- $labels := dict
+  "abstract" "摘要" "attention" "注意" "caution" "警告" "check" "检查"
+  "cite" "引用" "danger" "危险" "done" "完成" "error" "错误"
+  "example" "示例" "fail" "失败" "failure" "失败" "faq" "常见问题"
+  "help" "帮助" "hint" "提示" "important" "重要" "info" "信息"
+  "missing" "缺失" "note" "笔记" "question" "问题" "quote" "引用"
+  "success" "成功" "summary" "摘要" "tip" "技巧" "tldr" "太长不看"
+  "warning" "警告"
+-}}
+{{- $icons := dict
+  "abstract" "≡" "attention" "!" "caution" "!" "check" "✓"
+  "cite" "❝" "danger" "!" "done" "✓" "error" "×"
+  "example" "◇" "fail" "×" "failure" "×" "faq" "?"
+  "help" "?" "hint" "✦" "important" "!" "info" "i"
+  "missing" "×" "note" "i" "question" "?" "quote" "❝"
+  "success" "✓" "summary" "≡" "tip" "✦" "tldr" "≡"
+  "warning" "!"
+-}}
+{{- if eq .Type "alert" -}}
+  {{- $type := .AlertType | default "note" -}}
+  {{- $title := .AlertTitle | default (index $labels $type) | default (title $type) -}}
+  {{- $icon := index $icons $type | default "i" -}}
+  {{- $heading := printf `<span class="sakura-callout__title"><span class="sakura-callout__icon" aria-hidden="true">%s</span><span>%s</span></span>` $icon $title | safeHTML -}}
+  {{- if .AlertSign -}}
+<details class="sakura-callout sakura-callout--{{ $type }}" data-callout="{{ $type }}"{{ if eq .AlertSign "+" }} open{{ end }}>
+  <summary>{{ $heading }}</summary>
+  <div class="sakura-callout__content">{{ .Text }}</div>
+</details>
+  {{- else -}}
+<blockquote class="sakura-callout sakura-callout--{{ $type }}" data-callout="{{ $type }}">
+  {{ $heading }}
+  <div class="sakura-callout__content">{{ .Text }}</div>
+</blockquote>
+  {{- end -}}
+{{- else -}}
+<blockquote>
+  {{ .Text }}
+</blockquote>
+{{- end -}}

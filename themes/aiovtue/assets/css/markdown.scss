@@ -779,6 +779,88 @@ html.dark {
     }
   }
 
+  .sakura-callout {
+    --sakura-callout-color: var(--sakura-color-primary);
+    margin: 1em 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--sakura-callout-color) 42%, var(--sakura-color-divider));
+    border-left: 4px solid var(--sakura-callout-color);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--sakura-callout-color) 7%, var(--sakura-color-background));
+
+    &--note,
+    &--info { --sakura-callout-color: #3b82f6; }
+    &--abstract,
+    &--summary,
+    &--tldr { --sakura-callout-color: #14b8a6; }
+    &--tip,
+    &--hint,
+    &--important { --sakura-callout-color: #10b981; }
+    &--success,
+    &--check,
+    &--done { --sakura-callout-color: #22c55e; }
+    &--question,
+    &--help,
+    &--faq { --sakura-callout-color: #a855f7; }
+    &--warning,
+    &--caution,
+    &--attention { --sakura-callout-color: #f59e0b; }
+    &--failure,
+    &--fail,
+    &--missing,
+    &--danger,
+    &--error { --sakura-callout-color: #ef4444; }
+    &--example { --sakura-callout-color: #8b5cf6; }
+    &--quote,
+    &--cite { --sakura-callout-color: #64748b; }
+  }
+
+  .sakura-callout__title {
+    display: flex;
+    align-items: center;
+    gap: 0.45em;
+    margin: 0;
+    padding: 0.65em 0.9em 0.45em;
+    color: var(--sakura-callout-color);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .sakura-callout__icon {
+    flex: 0 0 auto;
+    font-family: system-ui, sans-serif;
+  }
+
+  .sakura-callout__content {
+    padding: 0 0.9em 0.75em;
+
+    > :first-child { margin-top: 0; }
+    > :last-child { margin-bottom: 0; }
+  }
+
+  details.sakura-callout > summary {
+    cursor: pointer;
+    list-style: none;
+  }
+
+  details.sakura-callout > summary::-webkit-details-marker { display: none; }
+
+  details.sakura-callout > summary .sakura-callout__title::after {
+    content: "⌄";
+    margin-left: auto;
+    transition: transform 0.2s ease;
+  }
+
+  details.sakura-callout:not([open]) > summary .sakura-callout__title::after {
+    transform: rotate(-90deg);
+  }
+
+  details.sakura-callout > summary:focus-visible {
+    outline: 2px solid var(--sakura-callout-color);
+    outline-offset: -3px;
+  }
+
   .sakura-table-wrap {
     display: block;
     width: 100%;
