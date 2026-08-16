@@ -1,8 +1,8 @@
 ---
-title: "动态"
-layout: "moments"
-icon: "ant-design:compass-filled"
-cover: "/hero/hero-1.mp4"
+title: 动态
+layout: moments
+icon: ant-design:compass-filled
+cover: /hero/tt2.webp
 cascade:
   - target:
       kind: page

@@ -1,6 +1,6 @@
 ---
 title: 画板
-cover: /hero/hero-2.mp4
+cover: /hero/tt3.webp
 icon: ri:brush-line
 ---
 
