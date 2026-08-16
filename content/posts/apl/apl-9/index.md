@@ -3,7 +3,7 @@ title: 高程整理(9)
 description: 结构体、类、对象
 date: 2026-06-14
 lastmod:
-cover: /posts/apl-9/cover.png
+cover: /posts/apl/apl-9/cover.png
 categories: 高级语言程序设计
 tags:
   - cpp

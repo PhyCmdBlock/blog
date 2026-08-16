@@ -3,7 +3,7 @@ title: 高程整理(4)
 description: 表达式、运算符
 date: 2026-06-14
 lastmod:
-cover: /posts/apl-4/cover.png
+cover: /posts/apl/apl-4/cover.png
 categories: 高级语言程序设计
 tags:
   - cpp

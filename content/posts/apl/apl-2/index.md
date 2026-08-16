@@ -3,7 +3,7 @@ title: 高程整理(2)
 description: C++输入输出
 date: 2026-06-14
 lastmod:
-cover: /posts/apl-2/cover.png
+cover: /posts/apl/apl-2/cover.png
 categories: 高级语言程序设计
 tags:
   - cpp

@@ -3,7 +3,7 @@ title: 高程整理(1)
 description: 进制、数据类型、变量
 date: 2026-06-14
 lastmod:
-cover: /posts/apl-1/cover.png
+cover: /posts/apl/apl-1/cover.png
 categories: 高级语言程序设计
 tags:
   - cpp

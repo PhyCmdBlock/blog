@@ -3,7 +3,7 @@ title: 高程整理(8)
 description: 指针
 date: 2026-06-14
 lastmod:
-cover: /posts/apl-8/cover.png
+cover: /posts/apl/apl-8/cover.png
 categories: 高级语言程序设计
 tags:
   - cpp
