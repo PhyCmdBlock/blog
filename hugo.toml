@@ -92,7 +92,7 @@ ignoreFiles = ['_template','posts/_ignore']
 # 站点参数（主题通过 .Site.Params 读取）
 # =============================================================================
 [params]
-  subtitle = 'PhyCmdBlock的博客'                              # 副标题（首页标题后缀）
+  subtitle = '奇迹的始发点'                              # 副标题（首页标题后缀）
   description = 'PhyCmdBlock的博客'                  # 站点默认描述（SEO、分享卡片） 
   primaryColor = '#28b9f8'                     # 主题主色 
   favicon = '/hero/avatar.jpg'          
@@ -219,7 +219,7 @@ ignoreFiles = ['_template','posts/_ignore']
     featuredPoolCount = 12      # list 模式推荐区候选池（排序后取前 N 篇 SSR，供切换按钮轮换）
     mobileNoticeTicker = true   # 移动端单行滚动公告
     featuredDesktop = true      # 电脑端推荐文章区
-    featuredMobile = true       # 移动端推荐文章区
+    featuredMobile = false       # 移动端推荐文章区
     
   [params.notice]
     title = '公告栏'
