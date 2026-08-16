@@ -228,6 +228,9 @@ ignoreFiles = ['_template','posts/_ignore']
       label = '--- 主域名 ---'
       lines = ['alsbb.top']
     [[params.notice.sections]]
+      label = '--- 旧域名 ---'
+      lines = ['aris.l.cd','(Hexo+Butterfly)']
+    [[params.notice.sections]]
       label = '--- 公告 ---'
       lines = ['所有人都要喜欢爱丽丝','目前网站处于试运行阶段。您可能会遇到大量bug。']
 
