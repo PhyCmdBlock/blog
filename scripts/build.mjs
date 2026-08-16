@@ -98,7 +98,10 @@ runStep("fetch-bangumi", process.execPath, ["scripts/fetch-bangumi.mjs"]);
 const hugoBin = resolveHugoBin();
 const hugoArgs = ["--cleanDestinationDir", "--minify"];
 
-const baseURL = process.env.CF_PAGES_URL
+// Keep the production domain defined in hugo.toml by default.  CF_PAGES_URL is
+// Cloudflare's deployment URL (for example, <project>.pages.dev), so using it
+// here would replace the canonical URLs in every production build.
+const baseURL = process.env.HUGO_BASEURL
   || process.env.RENDER_EXTERNAL_URL
   || process.env.GITHUB_PAGES_URL
   || process.env.URL
