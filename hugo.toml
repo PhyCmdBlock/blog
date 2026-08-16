@@ -38,7 +38,7 @@ hasCJKLanguage = true      # 启用中文分词（搜索、摘要等）
 enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layouts/robots.txt）
 
 # Obsidian 的文章模板保留在 content/_template 内，但不作为 Hugo 内容页解析或发布。
-ignoreFiles = ['_template']
+ignoreFiles = ['_template','posts/_ignore']
 
 # --- 站点地图（sitemap.xml）---
 [sitemap]
@@ -64,6 +64,7 @@ ignoreFiles = ['_template']
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
+      hardWraps = true     # 换行符就是换行
       unsafe = true        # 允许正文内嵌 HTML
     [markup.goldmark.extensions]
       [markup.goldmark.extensions.passthrough]
@@ -95,13 +96,13 @@ ignoreFiles = ['_template']
   description = 'PhyCmdBlock的博客'                  # 站点默认描述（SEO、分享卡片） 
   primaryColor = '#28b9f8'                     # 主题主色 
   favicon = '/hero/avatar.jpg'          
-  defaultCover = '/hero/tt3.webp'               # 文章默认头图（无 cover 时使用）
+  defaultCover = '/hero/tt4.webp'               # 文章默认头图（无 cover 时使用）
   math = false                                 # 默认关闭；单篇 front matter 写 math: true 启用构建时 KaTeX 渲染
   postIndent = true                            # 文章/关于页正文首行缩进 2em（单篇可写 indent: false 关闭）
 
   # --- 文章/关于页正文 ---
   [params.post]
-    fontSize = "1.1rem"                          # 正文字号（rem，如 0.95rem / 1.1rem）
+    fontSize = "1.3rem"                          # 正文字号（rem，如 0.95rem / 1.1rem）
 
   # --- 友链页 ---
   [params.links]
@@ -166,11 +167,14 @@ ignoreFiles = ['_template']
     fixedImg = true
     # playerUrl = '/hero/player.mp4'
     urls = [
-      '/img/default-cover.webp',
+      '/hero/tt4.webp',
       '/hero/tt3.webp',
       '/hero/tt1.webp',
       '/hero/tt2.webp',
-      
+      '/hero/tt6.webp',
+      '/hero/tt7.webp',
+      '/hero/tt8.webp',
+      '/hero/tt9.webp',
     ]
 
   # --- 页脚 ---
@@ -224,8 +228,8 @@ ignoreFiles = ['_template']
       label = '--- 主域名 ---'
       lines = ['alsbb.top']
     [[params.notice.sections]]
-      label = '--- 这是公告 ---'
-      lines = ['公告在配置文件中修改哦']
+      label = '--- 公告 ---'
+      lines = ['所有人都要喜欢爱丽丝','目前网站处于试运行阶段。您可能会遇到大量bug。']
 
   # --- 侧栏 / Hero 社交图标（icon 为 Iconify 图标名）---
   [[params.social]]

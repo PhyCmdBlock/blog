@@ -1,16 +1,24 @@
 ---
-# 关于页：正文写在下方 Markdown 中；layout: about 使用主题关于模板
-title: "关于我"
-layout: "about"
-cover: "/hero/hero-2.png"
+title: 关于我
+layout: about
+cover: /hero/tt3.webp
 date: 2026-06-05
 tocStartLevel: 2
 tocEndLevel: 3
 ---
 
+# ✨邦邦卡邦！✨
+## 关于本站
 
-### 关于本站
-这里就是网站的关于页面啦，你可以在这里写一些话来介绍你自己，也可以写一些互换友链的规则，总之，写你想写的，说你想说的，做你想做的，加油，你是最棒的！
+这里是 PhyCmdBlock 的小站！
 
-### 提一句
-以防你不知道怎么修改本页内容，该页面位置在`\content`文件夹下方`about.md`文件内哦，记得修改我哦
+对这个网站没什么规划，就是觉得搞个博客好玩，想过把手瘾，部署还挺简单，就搞出来了
+
+本博客并不将自身定位为严谨学术的“技术博客”（使用了这样的主题就足以证明），内容不保证具备专业性，不建议替代专业意见。
+
+## 其他
+框架使用[Hugo](https://gohugo.io/)
+
+主题使用[aiovtue](https://daily.yybb.us/posts/hugo-theme/aiovtue/hugotheme-aiovtue/)
+
+---

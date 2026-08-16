@@ -1,7 +1,9 @@
 ---
-title: "追番"
-layout: "bangumi"
-cover: "/hero/hero-2.mp4"
+title: 追番
+layout: bangumi
+cover:
 comment: false
-icon: "mdi:television-play"
+icon: mdi:television-play
 ---
+## 未启用
+谁会在b站追番？？

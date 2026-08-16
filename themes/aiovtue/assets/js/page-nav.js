@@ -1,5 +1,6 @@
 import { requestPageCommentsMount } from './comments.js'
 import { awaitPageLazyModules } from './lazy-modules.js'
+import { getNavbarLayoutOffset } from './navbar.js'
 import { hidePjaxLoader, showPjaxLoader } from './pjax-loader.js'
 
 const DEFAULT_FADE_MS = 200
@@ -330,6 +331,31 @@ function resetScroll() {
   applyTargetScroll(0)
 }
 
+function getHashScroll(url) {
+  let hash
+  try {
+    hash = new URL(url, window.location.href).hash
+  } catch {
+    return null
+  }
+  if (!hash || hash === '#') return null
+
+  let id = hash.slice(1)
+  try {
+    id = decodeURIComponent(id)
+  } catch {}
+
+  return () => {
+    const target = document.getElementById(id)
+    if (!target) {
+      resetScroll()
+      return
+    }
+    const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - getNavbarLayoutOffset() - 12)
+    applyTargetScroll(top)
+  }
+}
+
 function scheduleScrollAfterLayout(applyScroll) {
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
@@ -400,6 +426,8 @@ export function initPageNav({ mountPage, unmountPage, resolveScrollAfterMount, c
   const resolveMountScroll = (targetUrl, { scrollTop = true, scrollY = 0 } = {}) => {
     const custom = resolveScrollAfterMount?.(targetUrl, { scrollTop, scrollY })
     if (typeof custom === 'function') return custom
+    const hashScroll = getHashScroll(targetUrl)
+    if (hashScroll) return hashScroll
     if (scrollTop) return resetScroll
     return () => applyTargetScroll(scrollY)
   }
