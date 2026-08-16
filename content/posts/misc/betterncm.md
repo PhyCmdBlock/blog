@@ -1,6 +1,6 @@
 ---
-title: 桌面端网易云软件的注入插件betterncm
-description:
+title: betterncm
+description: 一个桌面端网易云软件的注入插件
 date: 2026-05-21
 lastmod:
 cover: /hero/tt8.webp

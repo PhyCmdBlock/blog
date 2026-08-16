@@ -95,7 +95,7 @@ ignoreFiles = ['_template','posts/_ignore']
   subtitle = '奇迹的始发点'                              # 副标题（首页标题后缀）
   description = 'PhyCmdBlock的博客'                  # 站点默认描述（SEO、分享卡片） 
   primaryColor = '#28b9f8'                     # 主题主色 
-  favicon = '/hero/avatar.jpg'          
+  favicon = '/favicon.png'          
   defaultCover = '/hero/tt4.webp'               # 文章默认头图（无 cover 时使用）
   math = false                                 # 默认关闭；单篇 front matter 写 math: true 启用构建时 KaTeX 渲染
   postIndent = true                            # 文章/关于页正文首行缩进 2em（单篇可写 indent: false 关闭）
@@ -302,7 +302,7 @@ ignoreFiles = ['_template','posts/_ignore']
   # provider 可选：waline | twikoo
   # 单篇文章可在 front matter 写 comment: false 关闭评论区
   [params.comment]
-    provider = ''
+    provider = 'twikoo'
 
   # --- Waline 评论（https://waline.js.org/）---
   # 仅当 params.comment.provider = waline 时生效；当前使用 twikoo，此处留作切换备用
@@ -315,7 +315,7 @@ ignoreFiles = ['_template','posts/_ignore']
   # visitorEnable：文章访问量统计（需 provider=twikoo 且已配置 envId）
   # COMMENT_PLACEHOLDER 请在 Twikoo 管理后台「配置」中设置
   [params.twikoo]
-    envId = 'https://your-twikoo-url'
+    envId = 'https://twikoo-cloudflare.tendouarisu755.workers.dev'
     visitorEnable = true   # 开启文章访问数量统计，基于twikoo
 
   # --- 留言页信封动画图片（文件在 static/envelope/）---
