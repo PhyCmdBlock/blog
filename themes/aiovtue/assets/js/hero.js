@@ -388,7 +388,7 @@ async function fetchHitokotoText() {
     }
   } catch (_) { /* ignore cache errors */ }
 
-  const res = await fetch('https://v1.hitokoto.cn/?encode=json', { cache: 'no-store' })
+  const res = await fetch('https://v1.hitokoto.cn/?encode=json&c=a&c=b&c=c&c=d&c=e', { cache: 'no-store' })
   if (!res.ok) throw new Error('hitokoto failed')
   const data = await res.json()
   if (!data?.hitokoto) throw new Error('hitokoto empty')
