@@ -1,13 +1,13 @@
 ---
 title: 时间复杂度和空间复杂度
-description:
+description: 时间复杂度和空间复杂度，大O表示法
 date: 2026-08-19
 lastmod: 2026-08-19
 cover:
 categories:
   - 数据结构与算法
 tags:
-  - 
+  - cpp
 ai:
 math: true
 layout:

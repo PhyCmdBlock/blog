@@ -1,12 +1,13 @@
 ---
 title: 线性表
-description:
+description: 顺序表、链表
 date: 2026-08-19
 lastmod: 2026-08-19
 cover:
 categories:
+  - 数据结构与算法
 tags:
-  - 
+  - cpp
 ai:
 math: false
 layout:
