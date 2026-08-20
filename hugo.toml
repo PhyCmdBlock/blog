@@ -409,6 +409,11 @@ ignoreFiles = ['_template','posts/_ignore']
     url = '/comment/'
     icon = 'ant-design:message-filled'
     weight = 4
+  [[params.menu.main]]
+    name = '笔记'
+    url = 'https://note.alsbb.top'
+    icon = 'ant-design:file-text-filled'
+    weight = 5
   # [[params.menu.main]]
   #   name = '友链'
   #   url = '/links/'
