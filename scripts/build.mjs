@@ -35,8 +35,8 @@ function ensureBuildReady() {
 
   if (isHugoRunning()) {
     console.error(
-      "\n[build] 检测到 Hugo 正在运行（常见于 `pnpm dev` 未关闭）。\n" +
-      "[build] 请先停止开发服务器，再重新执行 `pnpm run build`。\n",
+      "\n[build] 检测到 Hugo 正在运行（常见于 `npm run dev` 未关闭）。\n" +
+      "[build] 请先停止开发服务器，再重新执行 `npm run build`。\n",
     );
     process.exit(1);
   }

@@ -48,3 +48,6 @@ vector<int> arr(10);
 #### 改变长度
 `.resize(新长度, [默认值])`
 
+## 算法函数列表
+### max/min
+取两个值里的最大最小值。头文件`algorithm`
