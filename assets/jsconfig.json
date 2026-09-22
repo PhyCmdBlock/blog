@@ -2,7 +2,7 @@
  "compilerOptions": {
   "paths": {
    "*": [
-    "..\\themes\\aiovtue\\assets\\*"
+    "../themes/aiovtue/assets/*"
    ]
   }
  }

@@ -33,4 +33,4 @@ npm run build
 构建产物位于 `public/`。新增或更新依赖使用 `npm install`，并提交更新后的
 `package.json` 和 `package-lock.json`。部署平台的构建命令统一设置为 `npm run build`。
 
-
+双系统迁移及 Linux 接续说明：[LINUX-HANDOFF.md](LINUX-HANDOFF.md)。Windows 在 D:\Projects\blog-website 中使用 npm run dev。
