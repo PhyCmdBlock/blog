@@ -5,8 +5,9 @@ date: 2026-10-12
 lastmod: 2026-10-12
 cover:
 categories:
+  - 面向对象程序设计
 tags:
-  - 
+  - cpp
 ai:
 math: false
 layout:

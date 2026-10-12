@@ -5,8 +5,9 @@ date: 2026-09-20
 lastmod: 2026-10-10
 cover:
 categories:
+  - 数据结构与算法
 tags:
-  - 
+  - cpp
 ai:
 math: true
 layout:

@@ -5,8 +5,9 @@ date: 2026-10-09
 lastmod: 2026-10-09
 cover: https://img.alsbb.top/2026/10/0bb41d706666d79711e5448d1bea060d.png
 categories:
+  - 面向对象程序设计
 tags:
-  - 
+  - cpp
 ai:
 math: false
 layout:
