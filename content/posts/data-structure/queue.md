@@ -88,7 +88,7 @@ typedef struct{
 	LinkNode *front, *rear;
 } LinkQueue;
 
-void InitQueue(LinkQueue Q)
+void InitQueue(LinkQueue &Q)
 {
 	Q.front=Q.rear=(LinkNode*)malloc(sizeof(LinkNode));
     Q.front->next=NULL;
