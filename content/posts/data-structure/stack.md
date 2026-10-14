@@ -176,3 +176,5 @@ void DestroyStack(LiStack *&S)
 }
 ```
 比顺序栈多一个释放步骤。
+
+*TODO：应用*
