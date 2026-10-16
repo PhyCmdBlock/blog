@@ -1,8 +1,8 @@
 ---
 title: Verilog语言
 description: 简明的verilog，拒绝垃圾讲课
-date: 2026-10-13
-lastmod: 2026-10-13
+date: 2026-10-13T11:39:12
+lastmod: 2026-10-13T11:39:12
 cover:
 categories:
 tags:

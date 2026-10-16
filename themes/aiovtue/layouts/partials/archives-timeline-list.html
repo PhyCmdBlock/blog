@@ -29,7 +29,7 @@
       {{ if $filterKey }}data-{{ $filterKey }}='{{ $filterVal | jsonify }}'{{ end }}
       {{ if $hidden }}hidden{{ end }}
     >
-      <time datetime="{{ .Date.Format `2006-01-02` }}">{{ .Date.Format `01-02` }}</time>
+      <time datetime="{{ .Date.Format `2006-01-02T15:04:05-07:00` }}" title="{{ .Date.Format `2006-01-02 15:04` }}">{{ .Date.Format `01-02` }}</time>
       {{- partial "post-pinned-badge.html" . -}}
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </div>

@@ -1,8 +1,8 @@
 ---
 title: STL
 description: C++ Standard Template Library/C++标准模板库
-date: 2026-08-20
-lastmod: 2026-08-20
+date: 2026-08-20T00:09:45
+lastmod: 2026-08-20T00:09:45
 cover: /hero/tt4.webp
 categories:
   - 数据结构与算法

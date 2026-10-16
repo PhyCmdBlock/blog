@@ -31,6 +31,8 @@
 # 站点正式访问地址（影响 sitemap、RSS、分享链接等绝对 URL，部署前务必与真实域名一致）
 baseURL = 'https://alsbb.top/' 
 locale = 'zh-cn'
+# 不带时区的文章日期时间按北京时间解析。
+timeZone = 'Asia/Shanghai'
 defaultContentLanguage = 'zh'
 title = '爱丽丝邦邦！'          # 站点名称（浏览器标题、页脚版权等）
 theme = 'aiovtue'           # 主题目录：themes/aiovtue/

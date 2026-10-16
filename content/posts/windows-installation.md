@@ -1,8 +1,8 @@
 ---
 title: Windows重装系统
 description: 一次重装Windows系统的经历
-date: 2026-08-11
-lastmod: 2026-08-18
+date: 2026-08-11T17:30:41
+lastmod: 2026-08-18T17:30:41
 cover: /hero/tt6.webp
 categories:
   - 系统

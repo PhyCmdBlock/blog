@@ -1,8 +1,8 @@
 ---
 title: 高程整理(9)
 description: 结构体、类、对象
-date: 2026-06-14
-lastmod:
+date: 2026-06-14T18:53:50
+lastmod: 2026-08-16T18:53:50
 cover: /posts/apl/apl-9/cover.png
 categories: 高级语言程序设计
 tags:

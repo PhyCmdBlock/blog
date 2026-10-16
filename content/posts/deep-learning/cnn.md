@@ -1,8 +1,8 @@
 ---
 title: CNN
 description: 卷积神经网络
-date: 2026-10-16
-lastmod: 2026-10-16
+date: 2026-10-16T15:34:55
+lastmod: 2026-10-16T15:34:55
 cover:
 categories:
 tags:

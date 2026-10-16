@@ -1,8 +1,8 @@
 ---
 title: 安装一台Linux小主机
 description: 一次我安装一台迷你主机作为家庭服务器的过程
-date: 2026-08-13
-lastmod: 2026-08-18
+date: 2026-08-13T18:41:45
+lastmod: 2026-08-18T18:41:45
 cover: /hero/tt7.webp
 categories:
   - 系统

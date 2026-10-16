@@ -1,8 +1,8 @@
 ---
 title: 面向对象程序设计-文件读写
 description:
-date: 2026-10-09
-lastmod: 2026-10-09
+date: 2026-10-09T00:00:39
+lastmod: 2026-10-09T00:00:39
 cover: https://img.alsbb.top/2026/10/0bb41d706666d79711e5448d1bea060d.png
 categories:
   - 面向对象程序设计

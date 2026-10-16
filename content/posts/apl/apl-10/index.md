@@ -1,8 +1,8 @@
 ---
 title: 高程整理(10)
 description: 其他
-date: 2026-06-15
-lastmod:
+date: 2026-06-15T17:33:16
+lastmod: 2026-08-18T17:33:16
 cover: /posts/apl/apl-10/cover.png
 categories: 高级语言程序设计
 tags:

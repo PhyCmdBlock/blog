@@ -1,8 +1,8 @@
 ---
 title: 感知机
 description:
-date: 2026-10-14
-lastmod: 2026-10-14
+date: 2026-10-14T16:53:52
+lastmod: 2026-10-14T16:53:52
 cover:
 categories:
   - 深度学习

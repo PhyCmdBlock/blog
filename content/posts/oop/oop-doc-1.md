@@ -1,8 +1,8 @@
 ---
 title: 面向对象程序设计-文档作业-cout
 description: W0401-cout成员函数的使用
-date: 2026-10-12
-lastmod: 2026-10-12
+date: 2026-10-12T00:00:49
+lastmod: 2026-10-12T00:00:49
 cover:
 categories:
   - 面向对象程序设计

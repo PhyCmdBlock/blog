@@ -1,15 +1,15 @@
 ---
 title: 神经网络优化方法
 description:
-date: 2026-10-16
-lastmod: 2026-10-16
+date: 2026-10-16T15:25:27
+lastmod: 2026-10-16T15:25:27
 cover:
 categories:
   - 深度学习
 tags:
   - 
 ai:
-math: false
+math: true
 layout:
 pinned: false
 weight: 10

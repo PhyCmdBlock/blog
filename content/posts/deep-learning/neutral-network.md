@@ -1,8 +1,8 @@
 ---
 title: 神经网络
 description:
-date: 2026-10-14
-lastmod: 2026-10-14
+date: 2026-10-14T09:08:35
+lastmod: 2026-10-14T09:08:35
 cover:
 categories:
   - 深度学习

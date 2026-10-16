@@ -1,8 +1,8 @@
 ---
 title: 面向对象程序设计-1
 description: 暂未公开
-date: 2026-10-09
-lastmod: 2026-10-09
+date: 2026-10-09T00:00:30
+lastmod: 2026-10-09T00:00:30
 cover: https://img.alsbb.top/2026/10/0bb41d706666d79711e5448d1bea060d.png
 categories:
   - 面向对象程序设计

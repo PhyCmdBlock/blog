@@ -2,7 +2,8 @@
 title: 关于我
 layout: about
 cover: /hero/tt3.webp
-date: 2026-06-05
+date: 2026-06-05T21:45:28
+lastmod: 2026-08-17T21:45:28
 tocStartLevel: 2
 tocEndLevel: 3
 ---

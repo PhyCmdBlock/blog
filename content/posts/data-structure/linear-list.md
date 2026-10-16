@@ -1,8 +1,8 @@
 ---
 title: 线性表
 description: 顺序表、链表
-date: 2026-08-19
-lastmod: 2026-09-25
+date: 2026-08-19T22:06:07
+lastmod: 2026-09-25T22:06:07
 cover: /hero/tt7.webp
 categories:
   - 数据结构与算法

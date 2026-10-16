@@ -35,10 +35,16 @@ export function parsePostDateTime(isoDate, isDateOnly = false) {
   const trimmed = String(isoDate).trim()
   if (!trimmed) return null
 
-  const treatAsDateOnly = isDateOnly || DATE_ONLY_PATTERN.test(trimmed)
-  const date = treatAsDateOnly
-    ? new Date(`${trimmed}T12:00:00${CHINA_TZ_OFFSET}`)
-    : new Date(trimmed)
+  // 日期缺少时间时按北京时间零点解析；完整时间始终保留其精度。
+  // 兼容旧调用方的 isDateOnly 参数，但不让它覆盖完整时间。
+  const dateOnly = DATE_ONLY_PATTERN.test(trimmed)
+  const localDateTime = /^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?$/.test(trimmed)
+  const normalized = dateOnly
+    ? `${trimmed}T00:00:00${CHINA_TZ_OFFSET}`
+    : localDateTime
+      ? `${trimmed.replace(' ', 'T')}${CHINA_TZ_OFFSET}`
+      : trimmed
+  const date = new Date(normalized)
 
   return Number.isNaN(date.getTime()) ? null : date
 }

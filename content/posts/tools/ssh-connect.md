@@ -1,8 +1,8 @@
 ---
 title: SSH连接远程主机
 description: 如何使用Secure Shell连接远程主机
-date: 2026-07-15
-lastmod: 2026-08-17
+date: 2026-07-15T00:48:43
+lastmod: 2026-08-17T00:48:43
 cover: /hero/tt7.webp
 categories:
   - 软件

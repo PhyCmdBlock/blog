@@ -1,8 +1,8 @@
 ---
 title: 队列
 description: queue
-date: 2026-10-10
-lastmod: 2026-10-10
+date: 2026-10-10T09:52:50
+lastmod: 2026-10-10T09:52:50
 cover:
 categories:
   - 数据结构与算法

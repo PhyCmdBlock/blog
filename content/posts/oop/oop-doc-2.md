@@ -1,8 +1,8 @@
 ---
 title: 面向对象程序设计-文档作业-cin
 description: W0401-cin成员函数的使用
-date: 2026-10-12
-lastmod: 2026-10-12
+date: 2026-10-12T00:00:56
+lastmod: 2026-10-12T00:00:56
 cover:
 categories:
   - 面向对象程序设计

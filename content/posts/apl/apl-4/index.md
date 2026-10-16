@@ -1,8 +1,8 @@
 ---
 title: 高程整理(4)
 description: 表达式、运算符
-date: 2026-06-14
-lastmod:
+date: 2026-06-14T18:53:49
+lastmod: 2026-08-16T18:53:49
 cover: /posts/apl/apl-4/cover.png
 categories: 高级语言程序设计
 tags:

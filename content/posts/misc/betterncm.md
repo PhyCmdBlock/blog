@@ -1,8 +1,8 @@
 ---
 title: betterncm
 description: 一个桌面端网易云软件的注入插件
-date: 2026-05-21
-lastmod:
+date: 2026-05-21T19:47:30
+lastmod: 2026-08-16T19:47:30
 cover: /hero/tt8.webp
 categories: 软件
 tags:

@@ -1,8 +1,8 @@
 ---
 title: VMware Workstation安装
 description: 记录VMware Workstation
-date: 2026-02-11
-lastmod:
+date: 2026-02-11T17:37:19
+lastmod: 2026-08-16T17:37:19
 cover: /hero/tt2.webp
 categories: 软件
 tags:

@@ -1,8 +1,8 @@
 ---
 title: Shell入门
 description:
-date: 2026-07-12
-lastmod:
+date: 2026-07-12T17:30:04
+lastmod: 2026-08-16T17:30:04
 cover: /hero/tt9.webp
 categories: Missing-Semester-2026
 tags:

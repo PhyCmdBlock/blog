@@ -1,8 +1,8 @@
 ---
 title: 如何阻止WPS自动启动
 description:
-date: 2026-02-12
-lastmod:
+date: 2026-02-12T17:30:37
+lastmod: 2026-08-16T17:30:37
 cover: /hero/tt4.webp
 categories: 软件
 tags:

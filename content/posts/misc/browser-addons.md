@@ -1,8 +1,8 @@
 ---
 title: 净化你的浏览器体验
 description:
-date: 2026-04-15
-lastmod:
+date: 2026-04-15T17:38:16
+lastmod: 2026-08-16T17:38:16
 cover: /hero/tt7.webp
 categories: 软件
 tags:

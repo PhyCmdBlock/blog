@@ -1,8 +1,8 @@
 ---
 title: 栈
 description: stack
-date: 2026-09-20
-lastmod: 2026-10-10
+date: 2026-09-20T09:52:40
+lastmod: 2026-10-10T09:52:40
 cover:
 categories:
   - 数据结构与算法
