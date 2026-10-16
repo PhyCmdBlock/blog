@@ -96,7 +96,18 @@ ignoreFiles = ['_template','posts/_ignore']
   description = 'PhyCmdBlock的博客'                  # 站点默认描述（SEO、分享卡片） 
   primaryColor = '#28b9f8'                     # 主题主色 
   favicon = '/favicon.png'          
-  defaultCover = '/hero/tt4.webp'               # 文章默认头图（无 cover 时使用）
+  defaultCover = '/hero/tt4.webp'               # 候选列表为空时的默认头图
+  # 未指定 cover 时，按文章路径稳定地伪随机分配一张；设为 [] 可恢复固定默认头图
+  defaultCovers = [
+    '/hero/tt1.webp',
+    '/hero/tt2.webp',
+    '/hero/tt3.webp',
+    '/hero/tt4.webp',
+    '/hero/tt6.webp',
+    '/hero/tt7.webp',
+    '/hero/tt8.webp',
+    '/hero/tt9.webp',
+  ]
   math = false                                 # 默认关闭；单篇 front matter 写 math: true 启用构建时 KaTeX 渲染
   postIndent = true                            # 文章/关于页正文首行缩进 2em（单篇可写 indent: false 关闭）
 

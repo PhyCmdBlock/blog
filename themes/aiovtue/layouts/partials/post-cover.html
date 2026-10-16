@@ -3,7 +3,14 @@
 {{- if ne $page.Params.cover false -}}
   {{- $cover = strings.TrimSpace ($page.Params.cover | default "") -}}
   {{- if not $cover -}}
-    {{- $cover = $page.Site.Params.defaultCover -}}
+    {{- $covers := $page.Site.Params.defaultCovers | default slice -}}
+    {{- if $covers -}}
+      {{/* Stable pseudo-random selection keeps cards, headers and metadata in sync. */}}
+      {{- $index := mod (hash.FNV32a $page.RelPermalink) (len $covers) -}}
+      {{- $cover = index $covers $index -}}
+    {{- else -}}
+      {{- $cover = $page.Site.Params.defaultCover -}}
+    {{- end -}}
   {{- end -}}
   {{- if and $cover (not (or (hasPrefix $cover "http://") (hasPrefix $cover "https://") (hasPrefix $cover "//"))) -}}
     {{- if not (hasPrefix $cover "/") -}}

@@ -107,27 +107,24 @@ A是2\*3矩阵，B是3\*2矩阵.
 实际上，可以和一维数组进行矩阵乘法，它把一维数组当作一个列向量操作的。
 
 ## 神经网络内积
+
 ![image.png](https://img.alsbb.top/2026/10/1ae00293fbdae8c6347129a1fc139d7e.png)
+
 整个x部分是一个向量`[x1,x2]`。整个y部分也是一个向量`[y1,y2,y3]`
 省略偏置和激活函数，我们看权重是怎么搞的。
+
+
 $$
-\left(
-\begin{array}{c}
+\begin{pmatrix}
 x_1 & x_2
-\end{array}
-\right)
-\left(
-\begin{array}{ccc}
+\end{pmatrix}
+\begin{pmatrix}
 1 & 3 & 5 \\
-2&4&6
-\end{array}
-\right)
-=
-\left(
-\begin{array}{c}
+2 & 4 & 6
+\end{pmatrix} =
+\begin{pmatrix}
 y_1 & y_2 & y_3
-\end{array}
-\right)
+\end{pmatrix}
 $$
 
 ```python
@@ -154,13 +151,18 @@ Y = np.dot(X, W)
 输出层：$y_1$
 - 右下角的1表示，这是输出层的第1个神经元。
 
+
+
+
 输入层到第1层：
-$$\bf{A}^{(1)} = \bf{X}\bf{W}^{(1)}+B^{(1)}$$
+
+$\bf{A}^{(1)} = \bf{X}\bf{W}^{(1)}+B^{(1)}$
+
+
 即：
+
 $$
-\big(a_1^{(1)}\quad a_2^{(1)}\quad a_3^{(1)}\big)
-=
-\big(x_1\quad x_2\big)
+\big(a_1^{(1)}\quad a_2^{(1)}\quad a_3^{(1)}\big)=\big(x_1\quad x_2\big)
 \begin{pmatrix}
 w_{11}^{(1)} & w_{21}^{(1)} & w_{31}^{(1)} \\
 w_{12}^{(1)} & w_{22}^{(1)} & w_{32}^{(1)}
@@ -168,6 +170,7 @@ w_{12}^{(1)} & w_{22}^{(1)} & w_{32}^{(1)}
 +
 \big(b_1^{(1)}\quad b_2^{(1)}\quad b_3^{(1)}\big)
 $$
+
 激活函数。激活函数处理以后的神经元用z表示。其他和a一样。
 
 
@@ -342,5 +345,62 @@ step_num指定学习多少次，lr指定学习率。
 链式法则就是那个求导的链式法则。
 假如一个x，经过一个结点f，进行计算f(x)，获得了y。那么如果我要求后面的东西关于前面某个数据的偏导，在遇到这个结点f的时候，数据到这里是E，那么我可以让E乘上$\frac{\partial y}{\partial x}$，然后继续往回传播。基于链式法则，这样子的偏导在中间都可以约掉，最终就是后面的一个量关于前面某个量的偏导。
 
+下面的图展示了这个过程的原理。
+
+![c2bd87eff26a1ff88bc5c96a462a8947.jpg](https://img.alsbb.top/2026/10/3d5758bbce26a40b8fd3974e087adbe0.png)
 
 
+很容易发现，一些反向传播需要保存当时这个地方进来的其他值。
+
+我们可以把每个运算都实现成一个类，提供forward和backward2个类，对象自己会存储到时候反向传播需要的量。forward接受前面层进来的结果，进行正常计算，传给下一层。backward的时候从后面层传入部分偏导结果，进行本层运算的偏导数叠加，再传递回前面层。
+
+
+加法可以实现一个加法层，乘法也可以实现一个乘法层。`dlfs/ch05/layer_naive.py`
+
+神经网络里面还有激活函数，所以激活函数也得做一个前后向传播层的类。`dlfs/common/layers.py`之`class Relu`和`class sigmoid`
+
+注：sigmoid的反向传播，sigmoid对x的导数最后被精简为y(1-y)，可以数学上证明一下。
+
+
+下面要去处理神经网络里面矩阵乘法的那些部分了，它们怎么搞出反向传播来呢？这就是Affine层的实现。（矩阵的乘积运算可以被看作仿射变换，因此这个名字）
+
+Affine层全是矩阵，之前都是标量，标量偏导起来熟悉，但是矩阵的偏导：
+$$
+\frac{\partial L}{\partial \boldsymbol{X}} = \frac{\partial L}{\partial \boldsymbol{Y}} \cdot \boldsymbol{W}^\mathrm{T}
+$$
+$$
+\frac{\partial L}{\partial \boldsymbol{W}} = \boldsymbol{X}^\mathrm{T} \cdot \frac{\partial L}{\partial \boldsymbol{Y}}
+$$
+或者说
+$$
+\frac{\partial \boldsymbol{Y}}{\partial \boldsymbol{X}} = \boldsymbol{W}^\mathrm{T}
+$$
+$$
+\frac{\partial \boldsymbol{Y}}{\partial \boldsymbol{W}} = \boldsymbol{X}^\mathrm{T}
+$$
+暂时没想到好的直观理解方式（*TODO*）。从型号上这个转置是完美匹配的，但为什么是这个X和W本身，需要看逐个元素的推导。总之可以记住。
+
+
+另外，这个偏置是一维的，但实际上是加到每个数据上的。所以在求偏导的时候每个数据都和这个偏置有关。需要把每个数据的同一个地方传下来的值加起来，作为这个位置对偏置的偏导。`self.db = np.sum(dout, axis=0)`体现这一点。
+
+`dlfs/common/layers.py`之`class Affine`。
+
+现在介绍softmax层
+
+此处再解释了推理和学习两个阶段。实际上推理的时候我们只对那个最大值感兴趣，所以一般不用softmax层。但是学习阶段需要softmax层。
+
+由于softmax以后一般就是直接开始求损失（交叉熵损失），所以干脆把这两个东西合在一起，叫softmax-with-loss层。
+
+这个层稍微有点复杂的。过程都省略，最后告诉你从损失函数求导到softmax前的原输出层，偏导等于$y_i-t_i$，$y_i$是softmax的输出，$t_i$是one-hot的训练数据，你会发现这个值刚好就是当前网络的输出和标准答案的差距。
+
+为什么是刚刚好这样？不是偶然的，是为了得到这样的结果特意使用了交叉熵误差。如果输出层使用恒等函数，损失函数就得使用平方和误差，然后就又可以得出$y_i-t_i$这样的结果了。
+
+`dlfs/common/layers.py`之`class SoftWithLoss`。
+
+
+
+现在来看一下使用了反向传播的神经网络的全貌
+
+首先是原本的输入数据，前向传播，我们从输入层输入数据。然后来到了网络第一层，经过Affine1层，再经过一层激活函数（ReLU层），然后来到了网络第二层，还是经过Affine2层，再经过一层和、激活函数层（ReLU层），一直搞搞搞，最后一层是输出层，经过了Affine层以后，不是直接进入激活函数层，因为激活函数和损失函数合成了Softmax-with-loss层，进入。最后得到了loss。然后，开始反向传播，按照上面完全相反的顺序，回到之前的每一个W、B里的参数，取得偏导，使用偏导和学习率，对参数进行梯度下降，完成一次学习。
+
+这样，反向传播就正式运用于神经网络。但这也不代表数值微分没用了，它还能用来你写代码的时候检查你的反向传播写的对不对。这个确认数值微分和误差反向传播的梯度结果是否一致的过程叫梯度确认。

@@ -34,3 +34,12 @@ npm run build
 `package.json` 和 `package-lock.json`。部署平台的构建命令统一设置为 `npm run build`。
 
 双系统迁移及 Linux 接续说明：[LINUX-HANDOFF.md](LINUX-HANDOFF.md)。Windows 在 D:\Projects\blog-website 中使用 npm run dev。
+
+## 文章头图
+
+文章 front matter 中的 `cover` 优先使用手动指定的图片，`cover: false` 则隐藏头图。
+未填写 `cover` 或值为空时，从 `hugo.toml` 的 `[params].defaultCovers` 候选列表中，
+按文章 URL 路径做稳定的伪随机分配。同一篇文章在列表、详情和搜索中使用同一张头图，
+刷新页面或重新构建也保持一致；修改文章路径或候选列表后，分配结果可能改变。
+
+可在 `defaultCovers` 中增删图片路径。设为 `[]` 或移除该配置时，恢复使用 `defaultCover`。
