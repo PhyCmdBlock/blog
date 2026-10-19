@@ -1,6 +1,6 @@
 ---
 title: 数组
-description:
+description: 数组，矩阵
 date: 2026-10-14T10:46:28
 lastmod: 2026-10-14T10:46:27
 cover:

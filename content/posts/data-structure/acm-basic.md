@@ -30,3 +30,13 @@ cout.tie(nullptr);
 `cin.tie(nullptr);cout.tie(nullptr);`：取消cin 和cout的绑定，减少不必要的缓冲区刷新。`nullptr`是空指针关键字。
 
 同时要注意不要使用endl，这个也会对缓冲区进行刷新。
+
+## 未知行数读取
+这种处理方法是可以把含空格行读入的
+```cpp
+string line;
+while (getline(cin, line)) {
+	// 处理读入的line行。line行不含\n
+}
+```
+getline函数返回的是流对象的引用。到达文件末尾的时候，while里执行一下getline，结果读到eof，eofbit置1,返回的cin流对象被解释为bool的值时会变成0,退出循环。
